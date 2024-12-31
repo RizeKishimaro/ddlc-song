@@ -1,0 +1,40 @@
+.fade-in-text {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: bold;
+  color: black;
+  opacity: 0;
+  animation: fadeInOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}
+
+.lyric {
+  font-family: "Playwrite AU NSW Guides", serif;
+}
+
+.lyrics-container {
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
