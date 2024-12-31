@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import DiagonalInfiniteDots from "./components/diagonal-infinite-dots";
+import YourReality from "../public/out.mp3"
 
 
 
@@ -92,7 +93,7 @@ function App() {
           {currentLyric}
         </span>
       </div>
-      <audio src="../public/out.mp3" onEnded={() => setEnded(true)} autoPlay className="hidden"></audio>
+      <audio src={YourReality} onEnded={() => setEnded(true)} autoPlay className="hidden"></audio>
     </div>
   );
 }
