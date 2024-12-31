@@ -1,5 +1,6 @@
 
 import { useRef, useEffect, useState } from "react";
+import monika from "../../public/ddlc-monika.jpg";
 
 const DOT_SIZE = 64; // 16 * 4 (w-16 in Tailwind is 4rem)
 const GAP_SIZE = 32; // 8 * 4 (gap-8 in Tailwind is 2rem)
@@ -10,7 +11,6 @@ export default function DiagonalInfiniteDots({ ended }: { ended: boolean }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [columnCount, setColumnCount] = useState(0);
   const [rowCount, setRowCount] = useState(0);
-  const [showCredits, setShowCredits] = useState(false);
 
   useEffect(() => {
     const calculateGridDimensions = () => {
@@ -69,7 +69,7 @@ export default function DiagonalInfiniteDots({ ended }: { ended: boolean }) {
   if (ended) {
     return (
       <div className="w-full h-screen bg-black flex items-center overflow-hidden justify-center z-10">
-        <img src="../../public/ddlc-monika.jpg" className="w-[500px] opacity-10" />
+        <img src={monika} className="w-[500px] opacity-10" />
         <div
           className="absolute top-full w-full h-2/3 text-white text-center"
           style={{

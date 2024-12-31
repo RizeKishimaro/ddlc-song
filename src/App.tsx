@@ -3,9 +3,6 @@ import "./App.css";
 import DiagonalInfiniteDots from "./components/diagonal-infinite-dots";
 import YourReality from "../public/out.mp3"
 
-
-
-
 const lyricsWithTiming = [
   { time: 10, text: "Every day", interval: 1 },
   { time: 12, text: "I imagine a future, where I can be with you", interval: 3 },
@@ -54,16 +51,20 @@ function App() {
   const [currentTime, setCurrentTime] = useState(0);
   const [currentLyric, setCurrentLyric] = useState("");
   const [fadeStyle, setFadeStyle] = useState(""); // Tailwind classes for fade effects
-  const [ended, setEnded] = useState(false)
+  const [ended, setEnded] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false); // Track if the song is playing
+  const [audio] = useState(new Audio(YourReality)); // Initialize audio object
 
   useEffect(() => {
     // Start the timer
     const interval = setInterval(() => {
-      setCurrentTime((prevTime) => prevTime + 1);
+      if (isPlaying) {
+        setCurrentTime((prevTime) => prevTime + 1);
+      }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [isPlaying]);
 
   useEffect(() => {
     const lyric = lyricsWithTiming.find((item) => item.time === currentTime);
@@ -83,21 +84,46 @@ function App() {
     }
   }, [currentTime]);
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+    audio.play(); // Start playing the song
+  };
+
   return (
     <div className="relative min-h-screen bg-gray-800 text-black flex items-center justify-center">
-      <DiagonalInfiniteDots ended={ended} /> {/* Background animation */}
-      <div className="absolute text-center">
-        <span
-          className={`text-3xl lyric font-bold transform ${fadeStyle}`}
-        >
-          {currentLyric}
-        </span>
-      </div>
-      <audio src={YourReality} onEnded={() => setEnded(true)} autoPlay className="hidden"></audio>
+      {!isPlaying && (
+        <div className="absolute text-center text-white">
+          <h1 className="text-4xl font-bold">Your Reality</h1>
+          <p className="text-2xl mt-4">By Monika</p>
+          <button
+            onClick={handlePlay}
+            className="mt-6 px-8 py-3 bg-pink-500 text-white font-bold text-lg rounded-full hover:bg-pink-600"
+          >
+            Play Song
+          </button>
+        </div>
+      )}
+
+      {isPlaying && (
+        <>
+          <DiagonalInfiniteDots ended={ended} /> {/* Background animation */}
+          <div className="absolute text-center">
+            <span
+              className={`text-3xl lyric font-bold transform ${fadeStyle}`}
+            >
+              {currentLyric}
+            </span>
+          </div>
+        </>
+      )}
+      <audio
+        src={YourReality}
+        onEnded={() => setEnded(true)}
+        autoPlay={false} // Don't autoplay directly; play manually with the button
+        className="hidden"
+      ></audio>
     </div>
   );
 }
 
 export default App;
-
-
