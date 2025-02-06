@@ -1,49 +1,30 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import DiagonalInfiniteDots from "./components/diagonal-infinite-dots";
-import YourReality from "../public/out.mp3"
+import YourReality from "../public/perfect_cut.mp3"
+
 
 const lyricsWithTiming = [
-  { time: 10, text: "Every day", interval: 1 },
-  { time: 12, text: "I imagine a future, where I can be with you", interval: 3 },
-  { time: 19, text: "In my hand", interval: 1 },
-  { time: 21, text: "is a pen that'll write a poem, of me and you", interval: 3 },
-  { time: 28, text: "The ink flows down into a dark puddle", interval: 3 },
-  { time: 32, text: "Just move your hand", interval: 1 },
-  { time: 34, text: "write the way into his heart", interval: 2 },
-  { time: 37, text: "But in this world of infinite choices", interval: 3 },
-  { time: 41, text: "What will it take just to find", interval: 2 },
-  { time: 44, text: "that special day?", interval: 1 },
-  { time: 46, text: "What will it take just to find", interval: 2 },
-  { time: 49, text: "that special day?", interval: 1 },
-  { time: 60, text: "Have I found", interval: 1 },
-  { time: 62, text: "everybody a fun assignment", interval: 2 },
-  { time: 64, text: "to do today?", interval: 1 },
-  { time: 69, text: "When you're here", interval: 1 },
-  { time: 71, text: "everything that we do is fun", interval: 2 },
-  { time: 73, text: "for them anyway", interval: 1 },
-  { time: 78, text: "When I can't even read my own feelings", interval: 3 },
-  { time: 82, text: "What good are words", interval: 1 },
-  { time: 84, text: "when a smile says it all?", interval: 2 },
-  { time: 87, text: "And if this world won't write me an ending", interval: 3 },
-  { time: 91, text: "What will it take just for me", interval: 2 },
-  { time: 94, text: "to have it all?", interval: 1 },
-  { time: 115, text: "Does my pen", interval: 1 },
-  { time: 117, text: "only write bitter words for those", interval: 2 },
-  { time: 119, text: "who are dear to me?", interval: 3 },
-  { time: 124, text: "Is it love", interval: 1 },
-  { time: 126, text: "if I take your 'is it love'", interval: 1 },
-  { time: 128, text: "if I set you free?", interval: 3 },
-  { time: 138, text: "The ink flows down into a dark puddle", interval: 2 },
-  { time: 142, text: "How can I write", interval: 1 },
-  { time: 145, text: "love into reality?", interval: 1 },
-  { time: 147, text: "If I can't hear the sound of your heartbeat", interval: 3 },
-  { time: 151, text: "What do you call", interval: 1 },
-  { time: 153, text: "love in your reality?", interval: 2 },
-  { time: 156, text: "And in your reality", interval: 2 },
-  { time: 157, text: "if I don't know how to love you", interval: 2 },
-  { time: 164, text: "I'll leave you be", interval: 3 },
+  { time: 2, text: "Happy anniversary pr my loving Ma ❤️", interval: 5 },
+  { time: 9, text: "I wish you everything that brings you happiness today and always.", interval: 6 },
+  { time: 17, text: "I feel so lucky to have you in my life.", interval: 6 },
+  { time: 25, text: "I wish you the greatest happiness that can be in lot of love in this world.", interval: 6 },
+  { time: 35, text: "You are my lover, partner and best friend forever. ❤️ ❤️", interval: 4 },
+  { time: 40, text: "love you so much❤️ ❤️", interval: 10 },
+  // { time: 40, text: "I will not give you up this time", interval: 6 },
+  // { time: 47, text: "But darling, just kiss me slow", interval: 3 },
+  // { time: 51, text: "Your heart is all I own", interval: 3 },
+  // { time: 55, text: "And in your eyes you're holding mine", interval: 6 },
+  // { time: 62, text: "Baby, I'm dancing in the dark", interval: 6 },
+  // { time: 69, text: "With you between my arms", interval: 3 },
+  // { time: 73, text: "Barefoot on the grass", interval: 3 },
+  // { time: 77, text: "Listening to our favourite song", interval: 3 },
+  // { time: 80, text: "When you said you looked a mess", interval: 3 },
+  // { time: 83, text: "I whispered underneath my breath", interval: 5 },
+  // { time: 88, text: "But you heard it,", interval: 5 },
+  // { time: 90, text: "Darling, you look perfect tonight", interval: 6 },
 ];
+
 
 
 
@@ -93,8 +74,8 @@ function App() {
     <div className="relative min-h-screen bg-gray-800 text-black flex items-center justify-center">
       {!isPlaying && (
         <div className="absolute text-center text-white">
-          <h1 className="text-4xl font-bold">Your Reality</h1>
-          <p className="text-2xl mt-4">By Monika</p>
+          <h1 className="text-4xl font-bold">Happy Anniversary Par Ma ❤️</h1>
+          <p className="text-2xl mt-4">By Kg Myat Moe</p>
           <button
             onClick={handlePlay}
             className="mt-6 px-8 py-3 bg-pink-500 text-white font-bold text-lg rounded-full hover:bg-pink-600"
